@@ -78,4 +78,37 @@ public class LinkList {
         return head.getData();
     }
 
+    public void insertAtNth (Integer num, Integer index)throws IndexOutOfBoundsException{
+        Node p = null;
+        Node temp = null;
+        for(int i=1;i<=index;i++){
+            if(p==null){
+                p=head;
+            }else{
+                temp=p;
+                p=p.getLink();
+            }
+        }
+        Node node = new Node();
+        node.setData(num);
+        node.setLink(p);
+        temp.setLink(node);
+    }
+
+    public Node getHead(){
+        return head;
+    }
+
+   public void reverseItr(Node current){
+        Node prev=null;
+        while(current.getLink()!=null){
+            Node temp= current.getLink();
+            current.setLink(prev);
+            prev=current;
+            current=temp;
+        }
+        current.setLink(prev);
+        head=current;
+   }
+
 }

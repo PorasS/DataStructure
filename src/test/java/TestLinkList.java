@@ -29,4 +29,11 @@ public class TestLinkList {
         Assertions.assertEquals(10,linkList.getFirst());
     }
 
+    @Test
+    @DisplayName("Reverse List by Iteration Test = 8")
+    public void reverseItrTest(){
+        linkList.reverseItr(linkList.getHead());
+        Assertions.assertEquals(8,linkList.getFirst());
+    }
+
 }
